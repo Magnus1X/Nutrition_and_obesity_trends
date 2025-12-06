@@ -31,10 +31,6 @@ To analyze the relationship between global dietary patterns, nutrition availabil
 - Which countries are outliers (e.g., high calories but low obesity)?
 - Are there clusters of countries with similar dietary and obesity profiles?
 
-#### E. Predictive Analysis
-- Can we predict obesity rates from nutrition supply and demographic factors?
-- Which factors contribute most to obesity (feature importance)?
-
 ## 📊 Data Sources
 
 ### WHO Global Health Observatory (API)
@@ -51,13 +47,21 @@ To analyze the relationship between global dietary patterns, nutrition availabil
 - **Indicators**:
   - National food supply (kcal, fat, sugar, protein availability)
   - Nutrition composition indicators
-- **Coverage**: Limited to 3 overlapping country-year entries with WHO data
-- **Status**: ⚠️ Collected but insufficient for robust analysis
 
 ### Kaggle Datasets
 - Individual-level obesity prediction dataset (2111 entries, 17 features)
 - Behavioral and demographic factors
 - **Status**: ✅ Successfully analyzed with EDA completed
+  
+### UCI Machine Learning Repository
+- Estimation of Obesity Levels Based on Eating Habits and Physical Condition
+- Link: https://archive.ics.uci.edu/dataset/544/estimation+of+obesity+levels+based+on+eating+habits+and+physical+condition
+- Records: 2,111 participants (same base dataset as the Kaggle version, often used interchangeably)
+  Features:
+  - Lifestyle and eating habits (meals, water intake, fast food, etc.)
+  - Physical activity patterns
+  - Personal attributes (age, sex, BMI)
+Target: Multilevel obesity category (Normal, Overweight, Obesity I, Obesity II, etc.)
 
 ## 🔍 Key Findings
 
@@ -212,26 +216,6 @@ Nutrition_and_obesity_trends/
 - **Aggregated data**: Country-level analysis masks within-country variation
 - **Data integration challenges**: Inconsistent country coding and temporal alignment
 
-## 🔮 Future Directions
-
-### Data Enhancement
-- Expand FAOSTAT data collection for better temporal coverage
-- Integrate additional nutrition databases
-- Include socioeconomic and policy variables
-- Develop standardized country-year matching protocols
-
-### Analytical Improvements
-- Implement longitudinal analysis methods
-- Develop predictive models with adequate sample sizes
-- Conduct sub-national analysis where data permits
-- Integrate machine learning approaches for pattern recognition
-
-### Policy Applications
-- Develop country-specific intervention recommendations
-- Create early warning systems for obesity trends
-- Design targeted nutrition policies based on correlation patterns
-- Establish monitoring frameworks for nutrition-obesity relationships
-
 ## 📚 Key Insights for Public Health
 
 ### Policy Implications
@@ -261,25 +245,11 @@ Nutrition_and_obesity_trends/
 - [x] Nutrition-obesity correlations (insufficient data overlap)
 - [x] Predictive modeling (requires expanded dataset)
 
-### 🔄 Future Work
-- [ ] Machine learning prediction models
-- [ ] Expanded nutrition data collection
-- [ ] Longitudinal trend analysis
-- [ ] Policy intervention assessment
-
-## 🤝 Contributing
-
-This project provides a comprehensive foundation for understanding global nutrition-obesity relationships. Future contributions should focus on:
-- **Data expansion**: Acquiring more comprehensive nutrition datasets
-- **Model development**: Building predictive models for obesity risk
-- **Policy analysis**: Evaluating intervention effectiveness
-- **Visualization enhancement**: Interactive dashboards and tools
-
-## 📄 License
+## License
 
 This project is developed for research and educational purposes. Data sources maintain their respective licenses and usage terms.
 
-## 🎯 Key Deliverables
+## Key Deliverables
 
 - **6 comprehensive analysis reports** in `Inferences/` directory
 - **20+ visualizations** documenting trends and patterns
