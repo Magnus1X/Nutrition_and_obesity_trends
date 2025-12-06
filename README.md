@@ -45,17 +45,19 @@ To analyze the relationship between global dietary patterns, nutrition availabil
   - Child & adolescent obesity (crude rates)
   - Under-5 overweight, wasting, and stunting prevalence
   - Demographic splits by sex and age groups
+- **Status**: ✅ Successfully collected and analyzed
 
 ### FAOSTAT (FAO)
-- **Status**: Limited data collected
 - **Indicators**:
   - National food supply (kcal, fat, sugar, protein availability)
   - Nutrition composition indicators
-- **Coverage**: Sparse temporal and geographic coverage
+- **Coverage**: Limited to 3 overlapping country-year entries with WHO data
+- **Status**: ⚠️ Collected but insufficient for robust analysis
 
 ### Kaggle Datasets
-- Cleaned and consolidated obesity/nutrition datasets
-- Dietary pattern data by country and region
+- Individual-level obesity prediction dataset (2111 entries, 17 features)
+- Behavioral and demographic factors
+- **Status**: ✅ Successfully analyzed with EDA completed
 
 ## 🔍 Key Findings
 
@@ -95,7 +97,25 @@ To analyze the relationship between global dietary patterns, nutrition availabil
 - Energy/carbohydrates: Negative correlations (-0.72 to -0.87)
 - Adult-child obesity: Strong positive correlation (0.99)
 
-### 4. Country Case Studies
+### 4. Individual-Level Obesity Analysis (EDA)
+
+**Dataset Characteristics**
+- 2111 individuals across 7 obesity categories
+- 24 duplicate entries removed for data quality
+- Complete data with no missing values
+
+**Key Behavioral Findings**
+- **Family history**: Strong predictor of obesity risk
+- **High-caloric food consumption**: Significantly associated with higher obesity levels
+- **Eating between meals**: 'Sometimes' and 'Frequently' linked to overweight/obesity
+- **Transportation mode**: Walking/motorbike users tend toward lower weight categories
+
+**Demographic Patterns**
+- **Gender differences**: Females more prevalent in insufficient weight; males dominate severe obesity categories
+- **Age trends**: Higher obesity levels associated with slightly older populations
+- **Weight progression**: Clear increasing trend from insufficient weight to obesity Type III
+
+### 5. Country Case Studies
 
 **Japan: Child Obesity Prevention Success**
 - Mandatory balanced school meals
@@ -111,19 +131,25 @@ To analyze the relationship between global dietary patterns, nutrition availabil
 
 ```
 Nutrition_and_obesity_trends/
-├── assets/                          # Generated visualizations and plots
+├── assets/                          # Generated visualizations (20+ plots)
+│   ├── Global trend plots
+│   ├── Correlation heatmaps
+│   ├── Sex-wise analysis charts
+│   └── Individual-level EDA plots
 ├── Inferences/                      # Analysis reports and findings
 │   ├── adult_child_obesity_correlation_analysis.md
-│   ├── food supply analysis.md
+│   ├── food_supply_analysis.md
 │   ├── global_obesity_analysis.md
-│   ├── nutrition_vs_obesity analysis.md
+│   ├── nutrition_vs_obesity_analysis.md
+│   ├── obesity_trends.md           # Individual-level EDA findings
 │   └── sex_wise_obesity_trends.md
 ├── Notebook/                        # Jupyter notebooks for analysis
-│   ├── A.setup and import.ipynb
-│   ├── B.Data Cleaning.ipynb
-│   └── C.Analyse.ipynb
+│   ├── A.setup_and_import.ipynb   # Environment setup
+│   ├── B.Data_Cleaning.ipynb      # WHO/FAOSTAT data processing
+│   ├── C.Analyse.ipynb            # Statistical analysis
+│   └── D.EDA.ipynb                # Individual-level exploration
 ├── Plots/                          # Plot generation scripts
-├── Data Collection.md              # Data sources and collection methods
+├── Data_Collection.md              # Data sources documentation
 └── README.md                       # Project documentation
 ```
 
@@ -143,17 +169,25 @@ Nutrition_and_obesity_trends/
 - **WHO API**: Real-time health data access
 - **Jupyter Notebooks**: Interactive analysis environment
 
-## 📈 Visualizations Generated
+## 📈 Visualizations Generated (20+ Charts)
 
 ### Global Trends
 - Global mean obesity rates (1990-2022)
 - Sex-wise obesity trends for adults and children
 - Age group analysis for different obesity indicators
+- Under-5 malnutrition trends
 
 ### Correlation Analysis
 - Adult-child obesity correlation heatmaps
 - Country-specific correlation patterns
-- Nutrition vs. obesity scatter plots
+- Nutrition vs. obesity scatter plots (limited data)
+- Sugar availability correlation matrices
+
+### Individual-Level Analysis
+- Obesity distribution by categories
+- Gender-based obesity patterns
+- Age, height, weight distributions by obesity level
+- Behavioral factor correlations
 
 ### Country Comparisons
 - Top 20 countries with largest adult-child obesity disparities
@@ -207,22 +241,51 @@ Nutrition_and_obesity_trends/
 4. **Economic factors** significantly influence obesity patterns in lower-income countries
 
 ### Research Priorities
-1. Understanding mechanisms behind successful child obesity prevention
-2. Investigating economic transitions and obesity relationships
-3. Developing context-specific intervention strategies
-4. Improving data collection and integration methodologies
+1. **Data Integration**: Expand FAOSTAT-WHO overlap for robust nutrition-obesity analysis
+2. **Individual Prediction**: Develop machine learning models using behavioral factors
+3. **Policy Mechanisms**: Understand successful child obesity prevention strategies (Japan, Denmark)
+4. **Economic Factors**: Investigate how economic transitions affect obesity patterns
+5. **Longitudinal Studies**: Track individual and country-level changes over time
+
+## 📊 Analysis Status
+
+### ✅ Completed Analyses
+- [x] Global obesity trends (1990-2022)
+- [x] Adult-child obesity correlations
+- [x] Sex-wise obesity patterns
+- [x] Individual-level behavioral analysis
+- [x] Country case studies
+- [x] Data visualization suite (20+ charts)
+
+### ⚠️ Limited/Inconclusive
+- [x] Nutrition-obesity correlations (insufficient data overlap)
+- [x] Predictive modeling (requires expanded dataset)
+
+### 🔄 Future Work
+- [ ] Machine learning prediction models
+- [ ] Expanded nutrition data collection
+- [ ] Longitudinal trend analysis
+- [ ] Policy intervention assessment
 
 ## 🤝 Contributing
 
-This project provides a foundation for understanding global nutrition-obesity relationships. Future contributions should focus on:
-- Expanding data sources and coverage
-- Improving analytical methodologies
-- Developing policy-relevant insights
-- Enhancing visualization and communication tools
+This project provides a comprehensive foundation for understanding global nutrition-obesity relationships. Future contributions should focus on:
+- **Data expansion**: Acquiring more comprehensive nutrition datasets
+- **Model development**: Building predictive models for obesity risk
+- **Policy analysis**: Evaluating intervention effectiveness
+- **Visualization enhancement**: Interactive dashboards and tools
 
 ## 📄 License
 
 This project is developed for research and educational purposes. Data sources maintain their respective licenses and usage terms.
+
+## 🎯 Key Deliverables
+
+- **6 comprehensive analysis reports** in `Inferences/` directory
+- **20+ visualizations** documenting trends and patterns
+- **4 Jupyter notebooks** with reproducible analysis pipeline
+- **Cleaned datasets** ready for further research
+- **Policy recommendations** based on correlation findings
 
 ---
 
